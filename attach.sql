@@ -1,0 +1,9 @@
+CREATE TABLE attach(
+filename VARCHAR2(300) NOT NULL,
+bno NUMBER NOT NULL, CONSTRAINT fk_attach_bno FOREIGN KEY(bno) REFERENCES board(bno),
+regDate DATE DEFAULT SYSDATE
+)
+
+SELECT * FROM attach
+
+DELETE FROM attach

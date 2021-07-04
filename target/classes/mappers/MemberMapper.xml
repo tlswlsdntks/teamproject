@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.member">
+
+	<insert id="insert">
+		INSERT INTO member (userId, userPw, userName, email)
+		VALUES (#{userId}, #{userPw}, #{userName}, #{email})
+	</insert>
+
+	<select id="list" resultType="kr.co.domain.MemberDTO">
+		SELECT * FROM member
+	</select>
+
+	<select id="read" resultType="kr.co.domain.MemberDTO">
+		SELECT * FROM member WHERE userId =
+		#{userId}
+	</select>
+
+	<update id="update">
+		UPDATE member SET
+		userName=#{userName},
+		email=#{email}, updateDate=SYSDATE WHERE
+		userId=#{userId} AND
+		userPw=#{userPw}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM member WHERE userId=#{userId}
+	</delete>
+
+	<select id="login" resultType="MemberDTO">
+		SELECT userId, userName FROM member
+		WHERE userId=#{userId} AND userPw = #{userPw}
+	</select>
+
+</mapper>
