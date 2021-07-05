@@ -1,3 +1,4 @@
+
 CREATE TABLE member(
 	userId VARCHAR2(10), CONSTRAINT member_pk_userId PRIMARY KEY(userId),
 	userPw VARCHAR2(12) NOT NULL,

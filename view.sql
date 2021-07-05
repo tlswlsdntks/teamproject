@@ -58,3 +58,5 @@ update v_member_2_5 set userId = 'm004' where userId = 'm003'
 select * from v_member_2_5
 
 
+
+
